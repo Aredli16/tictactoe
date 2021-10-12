@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"fr.aredli.tictactoe.main","l":"App"},{"p":"fr.aredli.tictactoe.main.game","l":"Game"},{"p":"fr.aredli.tictactoe.main.grid","l":"Grid"},{"p":"fr.aredli.tictactoe.main.grid","l":"GridCase"},{"p":"fr.aredli.tictactoe.main.player","l":"Player"},{"p":"fr.aredli.tictactoe.main.grid","l":"Token"}]
