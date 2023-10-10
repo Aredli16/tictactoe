@@ -14,5 +14,4 @@ jobs:
               uses: pozil/auto-assign-issue@v1
               with:
                   assignees: Aredli16,Shinotobira,AventeL,ThomasDlx
-                  numOfAssignee: 2
-                  allowSelfAssign: false
+                  numOfAssignee: 1
