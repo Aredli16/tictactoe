@@ -2,8 +2,6 @@
 Tic Tac Toe Player
 """
 
-import math
-
 X = "X"
 O = "O"
 EMPTY = None
@@ -36,6 +34,7 @@ def actions(board):
                 actions.append((i, j))
     return actions
 
+
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
@@ -58,17 +57,18 @@ def result(board, action):
 
     return new_board
 
+
 def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    if(terminal(board)):
+    if terminal(board):
         player = utility(board)
-        if(player == -1):
+        if (player == -1):
             return "Player O won the game ! "
-        elif(player == 1):
+        elif (player == 1):
             return "Player X won the game ! "
-        elif(player == 0):
+        elif (player == 0):
             return "Otherwise !"
     raise NotImplementedError
 
@@ -90,7 +90,7 @@ def terminal(board):
 
 
 def utility(board):
-    for row in board :
+    for row in board:
         if all(cell == X for cell in row):
             return 1
         elif all(cell == O for cell in row):
