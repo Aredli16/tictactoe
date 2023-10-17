@@ -29,8 +29,12 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
-
+    actions = []
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == EMPTY:
+                actions.append((i, j))
+    return actions
 
 def result(board, action):
     """
@@ -43,6 +47,14 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
+    if(terminal(board)):
+        player = utility(board);
+        if(player == -1):
+            return "Player O won the game ! " 
+        elif(player == 1):
+            return "Player X won the game ! " 
+        elif(player == 0):
+            return "Otherwise !" 
     raise NotImplementedError
 
 
