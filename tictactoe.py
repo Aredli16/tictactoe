@@ -70,7 +70,6 @@ def winner(board):
             return "Player X won the game ! "
         elif (player == 0):
             return "Otherwise !"
-    raise NotImplementedError
 
 
 def terminal(board):
