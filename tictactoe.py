@@ -76,9 +76,11 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    # Vérifier s'il y a un gagnant
-    if utility(board) != 0:
+    # Vérifier si la partie est finie
+    count = sum(row.count(EMPTY) for row in board)
+    if count == 0:
         return True
+    return False
 
 
 def utility(board):
