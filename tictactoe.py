@@ -77,15 +77,8 @@ def terminal(board):
     Returns True if game is over, False otherwise.
     """
     # Vérifier s'il y a un gagnant
-    if winner(board) is not None:
+    if utility(board) != 0:
         return True
-
-    # Vérifier si toutes les cases sont remplies
-    for row in board:
-        if EMPTY in row:
-            return False
-
-    return True
 
 
 def utility(board):
