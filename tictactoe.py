@@ -40,8 +40,23 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
+    if terminal(board):
+        raise Exception("Le jeu est déjà terminé.")
 
+    player_turn = player(board)
+
+    if action not in actions(board):
+        raise Exception("Action non valide.")
+
+    new_board = [row[:] for row in board]
+
+    i, j = action
+    if new_board[i][j] == EMPTY:
+        new_board[i][j] = player_turn
+    else:
+        raise Exception("La case est déjà occupée.")
+
+    return new_board
 
 def winner(board):
     """
