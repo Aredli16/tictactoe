@@ -65,11 +65,11 @@ def winner(board):
     if(terminal(board)):
         player = utility(board);
         if(player == -1):
-            return "Player O won the game ! " 
+            return "Player O won the game ! "
         elif(player == 1):
-            return "Player X won the game ! " 
+            return "Player X won the game ! "
         elif(player == 0):
-            return "Otherwise !" 
+            return "Otherwise !"
     raise NotImplementedError
 
 
@@ -77,7 +77,16 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
+    # Vérifier s'il y a un gagnant
+    if winner(board) is not None:
+        return True
+
+    # Vérifier si toutes les cases sont remplies
+    for row in board:
+        if EMPTY in row:
+            return False
+
+    return True
 
 
 def utility(board):
@@ -86,13 +95,13 @@ def utility(board):
             return 1
         elif all(cell == O for cell in row):
             return -1
-        
+
     for col in range(3):
         if all(board[row][col] == X for row in range(3)):
             return 1
         elif all(board[row][col] == O for row in range(3)):
             return -1
-        
+
     if board[0][0] == X and board[1][1] == X and board[2][2] == X:
         return 1
     elif board[0][0] == O and board[1][1] == O and board[2][2] == O:
