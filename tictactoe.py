@@ -68,7 +68,7 @@ def winner(board):
             return "Player O won the game ! "
         elif (player == 1):
             return "Player X won the game ! "
-        elif (player == 0):
+        else:
             return "Otherwise !"
 
 
