@@ -63,7 +63,7 @@ def winner(board):
     Returns the winner of the game, if there is one.
     """
     if(terminal(board)):
-        player = utility(board);
+        player = utility(board)
         if(player == -1):
             return "Player O won the game ! "
         elif(player == 1):
