@@ -54,10 +54,24 @@ def terminal(board):
 
 
 def utility(board):
-    """
-    Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
-    """
-    raise NotImplementedError
+    for row in board :
+        if all(cell == X for cell in row):
+            return 1
+        elif all(cell == O for cell in row):
+            return -1
+        
+    for col in range(3):
+        if all(board[row][col] == X for row in range(3)):
+            return 1
+        elif all(board[row][col] == O for row in range(3)):
+            return -1
+        
+    if board[0][0] == X and board[1][1] == X and board[2][2] == X:
+        return 1
+    elif board[0][0] == O and board[1][1] == O and board[2][2] == O:
+        return -1
+    else:
+        return 0
 
 
 def minimax(board):
